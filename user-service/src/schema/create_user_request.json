@@ -1,0 +1,51 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Create User Schema",
+  "required": [
+    "username",
+    "email",
+    "password",
+    "age"
+  ],
+  "properties": {
+    "username": {
+      "type": "string",
+      "title": "Username of user",
+      "minLength": 3,
+      "maxLength": 16
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "title": "Email address for the new user",
+      "default": "",
+      "pattern": "(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])"
+    },
+    "password": {
+      "type": "string",
+      "title": "password of the user",
+      "minLength": 1,
+      "maxLength": 50
+    },
+    "first_name": {
+      "type": "string",
+      "title": "Firstname of the user",
+      "minLength": 1,
+      "maxLength": 50
+    },
+    "last_name": {
+      "type": "string",
+      "title": "Lastname of the user",
+      "minLength": 1,
+      "maxLength": 50
+    },
+    "age": {
+      "type": "integer",
+      "title": "Age of user",
+      "minimum": 5,
+      "maximum": 120
+    }
+  }
+}

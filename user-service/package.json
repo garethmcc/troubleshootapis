@@ -1,0 +1,27 @@
+{
+  "name": "serverless_template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "aws-sdk-mock": "^4.4.0",
+    "dirty-chai": "^2.0.1",
+    "generator-serverless-policy": "^2.0.0",
+    "serverless-iam-roles-per-function": "^1.0.4",
+    "serverless-mocha-plugin": "^1.11.0",
+    "serverless-pseudo-parameters": "^2.5.0",
+    "serverless-tag-api-gateway": "^1.0.0",
+    "standard": "^11.0.1"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.462.0",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^8.5.1",
+    "uuid": "^3.4.0"
+  }
+}

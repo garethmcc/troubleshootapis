@@ -1,0 +1,24 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "User login schema",
+  "required": [
+    "username",
+    "password"
+  ],
+  "properties": {
+    "username": {
+      "type": "string",
+      "title": "Username of user",
+      "minLength": 3,
+      "maxLength": 50
+    },
+    "password": {
+      "type": "string",
+      "title": "password of the user",
+      "minLength": 1,
+      "maxLength": 50
+    }
+  }
+}

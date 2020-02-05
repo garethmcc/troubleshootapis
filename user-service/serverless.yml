@@ -1,0 +1,184 @@
+org: troubleshootapis
+app: api-gateway
+service: user-service
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  stage: ${opt:stage, 'development'}
+  variableSyntax: "\\${((?!AWS)[ ~:a-zA-Z0-9._@'\",\\-\\/\\(\\)]+?)}"
+  stackTags:
+    Name: ${self:service}
+    service_name: ${self:service}
+    environment: ${opt:stage, self:provider.stage}
+    managed_by: sls
+# you can add statements to the Lambda function's IAM Role here
+  iamRoleStatements:
+    - Effect: "Allow"
+      Resource:
+        - arn:aws:dynamodb:#{AWS::Region}:#{AWS::AccountId}:table/${self:service}-user-${self:provider.stage}
+        - arn:aws:dynamodb:#{AWS::Region}:#{AWS::AccountId}:table/${self:service}-user-${self:provider.stage}/index/username
+        - arn:aws:dynamodb:#{AWS::Region}:#{AWS::AccountId}:table/${self:service}-forgotPassword-${self:provider.stage}
+        - arn:aws:dynamodb:#{AWS::Region}:#{AWS::AccountId}:table/${self:service}-forgotPassword-${self:provider.stage}/uuid
+      Action:
+        - "dynamodb:Query"
+        - "dynamodb:PutItem"
+#  iamRoleStatements:
+#    - Effect: "Allow"
+#      Action:
+#        - "s3:ListBucket"
+#      Resource: { "Fn::Join" : ["", ["arn:aws:s3:::", { "Ref" : "ServerlessDeploymentBucket" } ] ]  }
+#    - Effect: "Allow"
+#      Action:
+#        - "s3:PutObject"
+#      Resource:
+#        Fn::Join:
+#          - ""
+#          - - "arn:aws:s3:::"
+#            - "Ref" : "ServerlessDeploymentBucket"
+#            - "/*"
+
+# you can define service wide environment variables here
+  environment:
+    DYNAMODB_USER_TABLE: ${self:service}-user-${opt:stage, self:provider.stage}
+    DYNAMODB_FORGOTPASSWORD_TABLE: ${self:service}-forgotPassword-${opt:stage, self:provider.stage}
+    PASSWORD_SALT_ROUNDS: ${param:pass_salt_rounds, 5}
+    JWT_SECRET: ${param:JWT_SECRET, 'asecret'}
+    SNS_FORGOTPASSWORD_TOPICARN: arn:aws:sns:#{AWS::Region}:#{AWS::AccountId}:${self:service}-forgotPassword-${opt:stage, self:provider.stage}
+    SNS_SENDMAIL_TOPICARN: ${output:messaging-service.SNS_SENDMAIL_ARN, 'none'}
+    FORGOTPASSWORD_TOKEN_TIMEOUT: ${param:FORGOTPASSWORD_TOKEN_TIMEOUT, 86400}
+#  environment:
+#    variable1: value1
+
+# you can add packaging information here
+#package:
+#  include:
+#    - include-me.js
+#    - include-me-dir/**
+#  exclude:
+#    - exclude-me.js
+#    - exclude-me-dir/**
+functions:
+  getUser:
+    handler: src/functions/getUser.getUser
+    events:
+      - http:
+          path: v1/user/{username}
+          cors: true
+          method: get
+          authorizer: validate
+  validate:
+    handler: src/functions/validate.validate
+  checkUsername:
+    handler: src/functions/checkUsername.checkUsername
+    events:
+      - http:
+          path: v1/username/check/{username}
+          cors: true
+          method: get
+  checkEmail:
+    handler: src/functions/checkEmail.checkEmail
+    events:
+      - http:
+          path: v1/email/check/{email}
+          cors: true
+          method: get
+  sendForgotPasswordMail:
+    handler: src/functions/sendForgotPasswordMail.sendForgotPasswordMail
+    events:
+      - sns:
+          arn: arn:aws:sns:#{AWS::Region}:#{AWS::AccountId}:${self:service}-forgotPassword-${opt:stage, self:provider.stage}
+  authenticate:
+    handler: src/functions/authenticate.authenticate
+    events:
+      - http:
+          path: v1/login
+          method: post
+          cors: true
+          request:
+            schema:
+              application/json: ${file(src/schema/authenticate_request.json)}
+  initiateForgotPassword:
+    handler: src/functions/initiateForgotPassword.initiateForgotPassword
+    events:
+      - http:
+          path: v1/password/renew/{username}
+          method: get
+          cors: true
+  newUser:
+    handler: src/functions/newUser.newUser
+    events:
+      - http:
+          path: v1/user
+          method: post
+          cors: true
+          request:
+            schema:
+              application/json: ${file(src/schema/create_user_request.json)}
+
+plugins:
+  - serverless-tag-api-gateway
+  - serverless-iam-roles-per-function
+  - serverless-pseudo-parameters
+  - serverless-mocha-plugin
+custom:
+  serverless-mocha-plugin:
+    testTemplate: templates/testTemplate.ejs
+    functionTemplate: templates/functionTemplate.ejs
+  apiGatewayTags:
+    Name: ${self:service}-APIGateway
+    environment: ${opt:stage, self:provider.stage}
+    resource_owner: #Use Bitbucket username
+    business_unit: RD:Development
+    managed_by: sls
+    stackName: ${self:service}
+    infrastructure_tier: APIGateway
+resources:
+  Resources:
+    userTable:
+      Type: AWS::DynamoDB::Table
+      DeletionPolicy: Retain
+      Properties:
+        TableName: ${self:service}-user-${opt:stage, self:provider.stage}
+        AttributeDefinitions:
+          - AttributeName: username
+            AttributeType: S
+          - AttributeName: username_created_at
+            AttributeType: S
+        KeySchema:
+          - AttributeName: username
+            KeyType: HASH
+          - AttributeName: username_created_at
+            KeyType: RANGE
+        BillingMode: PAY_PER_REQUEST
+    forgotPasswordTable:
+      Type: AWS::DynamoDB::Table
+      DeletionPolicy: Retain
+      Properties:
+        TableName: ${self:service}-forgotPassword-${opt:stage, self:provider.stage}
+        AttributeDefinitions:
+          - AttributeName: uuid
+            AttributeType: S
+        KeySchema:
+          - AttributeName: uuid
+            KeyType: HASH
+        BillingMode: PAY_PER_REQUEST
+        TimeToLiveSpecification:
+          AttributeName: timeout
+          Enabled: true
+    forgotPasswordNotification:
+      Type: AWS::SNS::Topic
+      Properties:
+        TopicName: ${self:service}-forgotPassword-${opt:stage, self:provider.stage}
+
+# you can add CloudFormation resource templates here
+#resources:
+#  Resources:
+#    NewResource:
+#      Type: AWS::S3::Bucket
+#      Properties:
+#        BucketName: my-new-bucket
+#  Outputs:
+#     NewOutput:
+#       Description: "Description for the output"
+#       Value: "Some output value"
