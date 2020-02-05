@@ -1,8 +1,8 @@
 {
-  "name": "memory",
+  "name": "duration",
   "version": "1.0.0",
   "description": "",
-  "main": "memory_change.js",
+  "main": "longduration.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,7 +11,9 @@
   "dependencies": {
     "aws-sdk": "^2.611.0",
     "bcryptjs": "^2.4.3",
-    "lodash": "^4.17.15",
-    "protocol-buffers-schema": "^3.4.0"
+    "uuid": "^3.4.0"
+  },
+  "devDependencies": {
+    "serverless-pseudo-parameters": "^2.5.0"
   }
 }

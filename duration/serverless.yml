@@ -11,9 +11,9 @@
 #
 # Happy Coding!
 
-service: memory
+service: duration
 # app and org for use with dashboard.serverless.com
-app: memory
+app: duration
 org: troubleshootapis
 
 # You can pin your service to only deploy with a specific Serverless version
@@ -29,8 +29,18 @@ provider:
 #  region: us-east-1
 
 # you can add statements to the Lambda function's IAM Role here
-#  iamRoleStatements:
-#    - Effect: "Allow"
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "sns:Publish"
+      Resource:
+        - arn:aws:sns:*
+    - Effect: "Allow"
+      Action:
+        - "dynamodb:*"
+      Resource:
+        - arn:aws:dynamodb:*
+
 #      Action:
 #        - "s3:ListBucket"
 #      Resource: { "Fn::Join" : ["", ["arn:aws:s3:::", { "Ref" : "ServerlessDeploymentBucket" } ] ]  }
@@ -45,7 +55,9 @@ provider:
 #            - "/*"
 
 # you can define service wide environment variables here
-#  environment:
+  environment:
+    STARTEDBYSNS: arn:aws:sns:#{AWS::Region}:#{AWS::AccountId}:coldstart_start
+    DYNAMODB_TABLE: ${self:service}-autoSpanTable-${opt:stage, self:provider.stage}
 #    variable1: value1
 
 # you can add packaging information here
@@ -58,9 +70,19 @@ provider:
 #    - exclude-me-dir/**
 
 functions:
-  memory_change:
-    handler: memory_change.memory_change
-    memorySize: 512
+  longduration:
+    handler: longduration.longduration
+    memorySize: 1024
+  coldstarts:
+    handler: coldstarts.coldstarts
+    memorySize: 128
+  startedBySns:
+    handler: startedBySns.startedBySns
+    events:
+      - sns: coldstart_start
+    memorySize: 1024
+  auto-span:
+    handler: auto-span.autospan
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details
@@ -102,8 +124,20 @@ functions:
 #      variable2: value2
 
 # you can add CloudFormation resource templates here
-#resources:
-#  Resources:
+resources:
+  Resources:
+    autoSpanTable:
+      Type: AWS::DynamoDB::Table
+      DeletionPolicy: Retain
+      Properties:
+        TableName: ${self:service}-autoSpanTable-${opt:stage, self:provider.stage}
+        AttributeDefinitions:
+          - AttributeName: uuid
+            AttributeType: S
+        KeySchema:
+          - AttributeName: uuid
+            KeyType: HASH
+        BillingMode: PAY_PER_REQUEST
 #    NewResource:
 #      Type: AWS::S3::Bucket
 #      Properties:
@@ -112,3 +146,6 @@ functions:
 #     NewOutput:
 #       Description: "Description for the output"
 #       Value: "Some output value"
+
+plugins:
+  - serverless-pseudo-parameters

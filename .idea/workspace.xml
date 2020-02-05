@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="47a9c583-0ece-4edc-9e86-dba849406996" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/memory/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/memory/memory_change.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/memory/serverless.yml" afterDir="false" />
+    <list default="true" id="47a9c583-0ece-4edc-9e86-dba849406996" name="Default Changelist" comment="Added memory demo">
+      <change afterPath="$PROJECT_DIR$/duration/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/duration/auto-span.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/duration/coldstarts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/duration/longduration.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/duration/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/duration/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/duration/serverless.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/duration/startedBySns.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/memory/memory_change.js" beforeDir="false" afterPath="$PROJECT_DIR$/memory/memory_change.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/memory/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/memory/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/memory/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/memory/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/memory/serverless.yml" beforeDir="false" afterPath="$PROJECT_DIR$/memory/serverless.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +41,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="ServiceViewManager">
@@ -57,7 +67,8 @@
       <option name="presentableId" value="Default" />
       <updated>1580908090114</updated>
       <workItem from="1580908091608" duration="1991000" />
-      <workItem from="1580912587490" duration="2952000" />
+      <workItem from="1580912587490" duration="11963000" />
+      <workItem from="1580927354844" duration="2330000" />
     </task>
     <task id="LOCAL-00001" summary="Added no catch">
       <created>1580910147444</created>
@@ -87,7 +98,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580917079381</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added memory demo">
+      <created>1580917707231</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1580917707231</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -98,18 +116,19 @@
     <MESSAGE value="Added event to capture" />
     <MESSAGE value="added async function" />
     <MESSAGE value="Correct function name" />
-    <option name="LAST_COMMIT_MESSAGE" value="Correct function name" />
+    <MESSAGE value="Added memory demo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added memory demo" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="555" y="57" width="781" height="989" key="CommitChangelistDialog2" timestamp="1580917079320">
+    <state x="555" y="57" width="781" height="989" key="CommitChangelistDialog2" timestamp="1580919791177">
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
     <state x="555" y="57" width="799" height="991" key="CommitChangelistDialog2/0.25.1920.1055/1920.0.1920.1080@0.25.1920.1055" timestamp="1580910147364" />
-    <state x="555" y="57" width="781" height="989" key="CommitChangelistDialog2/0.25.1920.1055@0.25.1920.1055" timestamp="1580917079320" />
-    <state x="555" y="284" width="800" height="536" key="Vcs.Push.Dialog.v2" timestamp="1580917081564">
+    <state x="555" y="57" width="781" height="989" key="CommitChangelistDialog2/0.25.1920.1055@0.25.1920.1055" timestamp="1580919791177" />
+    <state x="555" y="284" width="800" height="536" key="Vcs.Push.Dialog.v2" timestamp="1580917710685">
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
     <state x="555" y="284" width="800" height="536" key="Vcs.Push.Dialog.v2/0.25.1920.1055/1920.0.1920.1080@0.25.1920.1055" timestamp="1580910149854" />
-    <state x="555" y="284" width="800" height="536" key="Vcs.Push.Dialog.v2/0.25.1920.1055@0.25.1920.1055" timestamp="1580917081564" />
+    <state x="555" y="284" width="800" height="536" key="Vcs.Push.Dialog.v2/0.25.1920.1055@0.25.1920.1055" timestamp="1580917710685" />
   </component>
 </project>

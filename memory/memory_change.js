@@ -1,8 +1,13 @@
 'use strict';
-const bcrypt = require('bcryptjs')
-module.exports.memory_change = async event => {
-  bcrypt.hashSync("anotherstring", 13)
+const AWS = require('aws-sdk')
+const _ = require('lodash')
+const schema = require('protocol-buffers-schema')
 
-  // Use this code if you don't use the http event with the LAMBDA-PROXY integration
-  // return { message: 'Go Serverless v1.0! Your function executed successfully!', event };
+module.exports.memory_change = async event => {
+  let arrayVar = []
+  for (let step = 0; step < 1000000; step++) {
+    arrayVar.push(step.toString())
+  }
+  return true
 };
+
