@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47a9c583-0ece-4edc-9e86-dba849406996" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/exceptions/nocatch.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/capture-error/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/capture-error/handler.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/capture-error/serverless.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exceptions/serverless.yml" beforeDir="false" afterPath="$PROJECT_DIR$/exceptions/serverless.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,11 +55,33 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1580908090114</updated>
-      <workItem from="1580908091608" duration="1517000" />
+      <workItem from="1580908091608" duration="1991000" />
     </task>
+    <task id="LOCAL-00001" summary="Added no catch">
+      <created>1580910147444</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1580910147444</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added no catch" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added no catch" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="555" y="57" width="799" height="991" key="CommitChangelistDialog2" timestamp="1580910147364">
+      <screen x="0" y="25" width="1920" height="1055" />
+    </state>
+    <state x="555" y="57" width="799" height="991" key="CommitChangelistDialog2/0.25.1920.1055/1920.0.1920.1080@0.25.1920.1055" timestamp="1580910147364" />
+    <state x="555" y="284" width="800" height="536" key="Vcs.Push.Dialog.v2" timestamp="1580910149854">
+      <screen x="0" y="25" width="1920" height="1055" />
+    </state>
+    <state x="555" y="284" width="800" height="536" key="Vcs.Push.Dialog.v2/0.25.1920.1055/1920.0.1920.1080@0.25.1920.1055" timestamp="1580910149854" />
   </component>
 </project>
