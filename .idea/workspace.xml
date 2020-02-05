@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="47a9c583-0ece-4edc-9e86-dba849406996" name="Default Changelist" comment="added async topic">
-      <change afterPath="$PROJECT_DIR$/capture-error/async.js" afterDir="false" />
+    <list default="true" id="47a9c583-0ece-4edc-9e86-dba849406996" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/capture-error/serverless.yml" beforeDir="false" afterPath="$PROJECT_DIR$/capture-error/serverless.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/capture-error/async.js" beforeDir="false" afterPath="$PROJECT_DIR$/capture-error/async.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +55,7 @@
       <option name="presentableId" value="Default" />
       <updated>1580908090114</updated>
       <workItem from="1580908091608" duration="1991000" />
-      <workItem from="1580912587490" duration="1790000" />
+      <workItem from="1580912587490" duration="2334000" />
     </task>
     <task id="LOCAL-00001" summary="Added no catch">
       <created>1580910147444</created>
@@ -72,7 +71,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580915480355</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added async function">
+      <created>1580916562025</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1580916562025</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -81,18 +87,19 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added no catch" />
     <MESSAGE value="Added event to capture" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added event to capture" />
+    <MESSAGE value="added async function" />
+    <option name="LAST_COMMIT_MESSAGE" value="added async function" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="555" y="57" width="781" height="989" key="CommitChangelistDialog2" timestamp="1580916552972">
+    <state x="555" y="57" width="781" height="989" key="CommitChangelistDialog2" timestamp="1580916561956">
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
     <state x="555" y="57" width="799" height="991" key="CommitChangelistDialog2/0.25.1920.1055/1920.0.1920.1080@0.25.1920.1055" timestamp="1580910147364" />
-    <state x="555" y="57" width="781" height="989" key="CommitChangelistDialog2/0.25.1920.1055@0.25.1920.1055" timestamp="1580916552972" />
-    <state x="555" y="284" width="800" height="536" key="Vcs.Push.Dialog.v2" timestamp="1580916556210">
+    <state x="555" y="57" width="781" height="989" key="CommitChangelistDialog2/0.25.1920.1055@0.25.1920.1055" timestamp="1580916561956" />
+    <state x="555" y="284" width="800" height="536" key="Vcs.Push.Dialog.v2" timestamp="1580916565047">
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
     <state x="555" y="284" width="800" height="536" key="Vcs.Push.Dialog.v2/0.25.1920.1055/1920.0.1920.1080@0.25.1920.1055" timestamp="1580910149854" />
-    <state x="555" y="284" width="800" height="536" key="Vcs.Push.Dialog.v2/0.25.1920.1055@0.25.1920.1055" timestamp="1580916556210" />
+    <state x="555" y="284" width="800" height="536" key="Vcs.Push.Dialog.v2/0.25.1920.1055@0.25.1920.1055" timestamp="1580916565047" />
   </component>
 </project>

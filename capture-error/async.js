@@ -1,11 +1,11 @@
 'use strict';
 
-module.exports.capture = async (event, context) => {
+module.exports.async = async (event, context) => {
   //Do what I need to here
 
   try {
     throw new Error('An error .. ermagherd')
-  } catch(thrownError) {
+  } catch (thrownError) {
     console.log('An error occurred')
     console.log(thrownError)
     if (context.hasOwnProperty('serverlessSdk')) {
