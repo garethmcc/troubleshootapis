@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports.hello = async (event, context) => {
+module.exports.capture = async (event, context) => {
   if (context.hasOwnProperty('serverlessSdk')) {
     context.serverlessSdk.captureError(new Error('We caught this one. Phew'))
   }
