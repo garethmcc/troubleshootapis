@@ -2,7 +2,7 @@
 const bcrypt = require('bcryptjs')
 
 module.exports.longduration = async event => {
-  bcrypt.hashSync("anotherstring", 13)
+  bcrypt.hashSync("anotherstring", 6)
   return {
     statusCode: 200
   };

@@ -11,9 +11,9 @@
 #
 # Happy Coding!
 
-service: memory
+service: custom-instrumentation
 # app and org for use with dashboard.serverless.com
-app: memory
+app: custom-instrumentation
 org: troubleshootapis
 
 # You can pin your service to only deploy with a specific Serverless version
@@ -58,9 +58,8 @@ provider:
 #    - exclude-me-dir/**
 
 functions:
-  memory_change:
-    handler: memory_change.memory_change
-    memorySize: 128
+  capturespans:
+    handler: capturespans.capturespans
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details

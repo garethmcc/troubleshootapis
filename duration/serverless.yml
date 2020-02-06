@@ -72,7 +72,7 @@ provider:
 functions:
   longduration:
     handler: longduration.longduration
-    memorySize: 1024
+    memorySize: 2048
   coldstarts:
     handler: coldstarts.coldstarts
     memorySize: 128
@@ -80,7 +80,7 @@ functions:
     handler: startedBySns.startedBySns
     events:
       - sns: coldstart_start
-    memorySize: 1024
+    memorySize: 2048
   auto-span:
     handler: auto-span.autospan
 #    The following are a few example events you can configure

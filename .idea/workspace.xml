@@ -2,18 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47a9c583-0ece-4edc-9e86-dba849406996" name="Default Changelist" comment="Added memory demo">
-      <change afterPath="$PROJECT_DIR$/duration/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/duration/auto-span.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/duration/coldstarts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/duration/longduration.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/duration/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/duration/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/duration/serverless.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/duration/startedBySns.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom-instrumentation/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom-instrumentation/capturespans.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom-instrumentation/serverless.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/capture-error/capture.js" beforeDir="false" afterPath="$PROJECT_DIR$/capture-error/capture.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/duration/longduration.js" beforeDir="false" afterPath="$PROJECT_DIR$/duration/longduration.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/duration/serverless.yml" beforeDir="false" afterPath="$PROJECT_DIR$/duration/serverless.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/memory/memory_change.js" beforeDir="false" afterPath="$PROJECT_DIR$/memory/memory_change.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memory/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/memory/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memory/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/memory/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/memory/serverless.yml" beforeDir="false" afterPath="$PROJECT_DIR$/memory/serverless.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,6 +65,8 @@
       <workItem from="1580908091608" duration="1991000" />
       <workItem from="1580912587490" duration="11963000" />
       <workItem from="1580927354844" duration="2330000" />
+      <workItem from="1580930328630" duration="4500000" />
+      <workItem from="1580980899164" duration="4182000" />
     </task>
     <task id="LOCAL-00001" summary="Added no catch">
       <created>1580910147444</created>

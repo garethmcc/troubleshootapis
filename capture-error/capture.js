@@ -1,9 +1,12 @@
 'use strict';
 
 module.exports.capture = async (event, context) => {
+
+  // Oh no! An error has happened!
   if (context.hasOwnProperty('serverlessSdk')) {
     context.serverlessSdk.captureError(new Error('We caught this one. Phew'))
   }
+  // Do some more work here
   return {
     statusCode: 200,
     body: JSON.stringify(
