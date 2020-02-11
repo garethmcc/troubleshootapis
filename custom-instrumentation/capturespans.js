@@ -1,6 +1,7 @@
 'use strict';
+const bcrypt = require('bcryptjs')
 
-module.exports.capturespans = async event => {
+module.exports.capturespans = async (event, context) => {
   await context.serverlessSdk.span('HASH13', async () => {
     return new Promise((resolve, reject) => {
       bcrypt.hash("anotherstring", 13, () => {
