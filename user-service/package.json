@@ -4,7 +4,7 @@
   "description": "",
   "main": "handler.js",
   "scripts": {
-    "test": "npm install -g mocha && mocha src/test/functions"
+    "test": "mocha src/test/functions"
   },
   "author": "",
   "license": "ISC",
