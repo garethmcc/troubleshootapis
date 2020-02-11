@@ -13,7 +13,7 @@
 
 service: duration
 # app and org for use with dashboard.serverless.com
-app: duration
+app: examples
 org: garethmccumskey
 
 # You can pin your service to only deploy with a specific Serverless version

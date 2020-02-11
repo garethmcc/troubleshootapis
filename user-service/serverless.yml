@@ -1,5 +1,5 @@
 org: garethmccumskey
-app: api-gateway
+app: examples
 service: user-service
 
 provider:
