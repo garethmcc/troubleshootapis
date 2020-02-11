@@ -4,8 +4,8 @@ service: user-service
 
 provider:
   name: aws
-  runtime: nodejs10.x
-  stage: ${opt:stage, 'development'}
+  runtime: nodejs12.x
+  stage: ${opt:stage, 'dev'}
   variableSyntax: "\\${((?!AWS)[ ~:a-zA-Z0-9._@'\",\\-\\/\\(\\)]+?)}"
   stackTags:
     Name: ${self:service}
