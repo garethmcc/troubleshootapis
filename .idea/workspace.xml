@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="47a9c583-0ece-4edc-9e86-dba849406996" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/memory/memory_change.js" beforeDir="false" afterPath="$PROJECT_DIR$/memory/memory_change.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/serverless.yml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/serverless.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +65,7 @@
       <workItem from="1580997393913" duration="7143000" />
       <workItem from="1581320874956" duration="18000" />
       <workItem from="1581424692296" duration="3864000" />
-      <workItem from="1581430357459" duration="1073000" />
+      <workItem from="1581430357459" duration="3265000" />
     </task>
     <task id="LOCAL-00001" summary="Added no catch">
       <created>1580910147444</created>
@@ -143,7 +144,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581427277960</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Removed install mocha">
+      <created>1581431438141</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1581431438141</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,24 +168,25 @@
     <MESSAGE value="Switched app for all" />
     <MESSAGE value="Turned tests on" />
     <MESSAGE value="Add missing module" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add missing module" />
+    <MESSAGE value="Removed install mocha" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed install mocha" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="555" y="59" width="879" height="997" key="CommitChangelistDialog2" timestamp="1581427277860">
+    <state x="555" y="59" width="879" height="997" key="CommitChangelistDialog2" timestamp="1581431437934">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="555" y="57" width="799" height="991" key="CommitChangelistDialog2/0.25.1920.1055/1920.0.1920.1080@0.25.1920.1055" timestamp="1580988813435" />
     <state x="555" y="57" width="781" height="989" key="CommitChangelistDialog2/0.25.1920.1055@0.25.1920.1055" timestamp="1580919791177" />
-    <state x="555" y="59" width="879" height="997" key="CommitChangelistDialog2/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1581427277860" />
+    <state x="555" y="59" width="879" height="997" key="CommitChangelistDialog2/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1581431437934" />
     <state x="743" y="311" width="424" height="484" key="FileChooserDialogImpl" timestamp="1581320889754">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="743" y="311" width="424" height="484" key="FileChooserDialogImpl/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1581320889754" />
-    <state x="555" y="286" width="800" height="536" key="Vcs.Push.Dialog.v2" timestamp="1581427280599">
+    <state x="555" y="286" width="800" height="536" key="Vcs.Push.Dialog.v2" timestamp="1581431441080">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="555" y="284" width="800" height="536" key="Vcs.Push.Dialog.v2/0.25.1920.1055/1920.0.1920.1080@0.25.1920.1055" timestamp="1580988816080" />
     <state x="555" y="284" width="800" height="536" key="Vcs.Push.Dialog.v2/0.25.1920.1055@0.25.1920.1055" timestamp="1580917710685" />
-    <state x="555" y="286" width="800" height="536" key="Vcs.Push.Dialog.v2/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1581427280599" />
+    <state x="555" y="286" width="800" height="536" key="Vcs.Push.Dialog.v2/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1581431441080" />
   </component>
 </project>

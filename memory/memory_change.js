@@ -8,6 +8,7 @@ module.exports.memory_change = async event => {
   // for (let step = 0; step < 1000000; step++) {
   //   arrayVar.push(step.toString())
   // }
-  return true
+
+  return "Some change"
 };
 
