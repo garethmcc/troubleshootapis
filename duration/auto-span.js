@@ -9,6 +9,7 @@ module.exports.autospan = async event => {
       uuid:uuidv4()
     }
   }
+  console.log(putParams)
   let dynamo = new AWS.DynamoDB.DocumentClient()
   for (let step = 0; step < 20; step++) {
     let putParams = {
